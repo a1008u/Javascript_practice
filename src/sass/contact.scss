@@ -1,0 +1,68 @@
+$backgroundcolor:rgba(255, 255, 255, 0.05);
+$boxshadow:0 0 8px  rgba(255, 255, 255, 0.5) inset;
+
+.contact {
+    padding-top   : 80px;
+    padding-right : 0;
+    padding-bottom: 150px;
+    padding-left  : 0;
+}
+
+.contact-form {
+    width: 50%;
+    margin-top   : 50px;
+    margin-right : auto;
+    margin-bottom: 0;
+    margin-left  : auto;
+
+    input[type=text], textarea {
+        display: block;
+        width  :100%;
+        margin-bottom: 10px;
+        padding: 15px;
+        outline: none;
+        border : 1px solid rgba(255, 255, 255, 0.4);
+        border-radius   : 0;
+        background-color: $backgroundcolor;
+        color : #fff;
+    }
+
+    input[type=text] {
+        &:focus, {
+            box-shadow:$boxshadow;
+        }
+    }
+
+    textarea {
+        height: 150px;
+
+        &:focus, {
+            box-shadow:$boxshadow;
+        }
+    }
+
+    input[type=submit] {
+        display: block;
+        width  :200px;
+        margin-top   : 40px;
+        margin-right : auto;
+        margin-bottom: 0;
+        margin-left  : auto;
+        padding : 15px;
+        border : 1px solid rgba(255, 255, 255, 0.4);
+        border-radius   : 5px;
+        background-color: transparent;
+        color : rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+
+        &:hover {
+            background-color: $backgroundcolor;
+        }
+
+    }
+
+}
+
+
+
+

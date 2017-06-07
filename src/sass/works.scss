@@ -1,0 +1,116 @@
+$backcolor: #383634;
+$butbackcolor:rgba(255, 255, 255, 0.15);
+$tree     : url('../images/tree.jpg');
+$building : url('../images/building.jpg');
+$lake     : url('../images/lake.jpg');
+$sky      : url('../images/sky.jpg');
+
+.works {
+    background-color: ＄backcolor;
+    padding-top   : 80px;
+    padding-right : 0;
+    padding-bottom: 80px;
+    padding-left  : 0;
+}
+
+.works-wrapper {
+    display: table;
+    width  : 100%;
+    margin-top  : 60px;
+    table-layout: fixed;
+
+    .work-box {
+        position: relative;
+        display: table-cell;
+
+        &::after {
+            content : '';
+            position: absolute;
+            top   : 50%;
+            left  : 0;
+            width : 100%;
+            height: 50%;
+            background: no-repeat;
+            background-size: 100% 100%;
+            opacity: 0.2;
+            transform: scale(-1);
+        } 
+
+        // 奇数列を入れ替える
+        &:nth-child(odd) {
+            .work-image {
+                margin-top    : 60%;
+                margin-right  : 0;
+                margin-bottom : 0;
+                margin-left   : 0;
+            }
+            .work-description, &::after {
+                top: 0;
+            }
+        }
+    }
+
+    // after要素に画像を貼り付ける
+    .tree::after{
+        background-image: $tree;
+    }
+    .building::after{
+        background-image: $building;
+    }
+    .lake::after{
+        background-image: $lake;
+    }
+    .sky::after{
+        background-image: $sky;
+    }
+
+    .work-image {
+        // 画像をcellからはみ出さないようにする
+        display:block;
+        width  :100%;
+
+        // 画像比(5:3)を用いて、marginで領域を作る
+        margin-top    : 0;
+        margin-right  : 0;
+        margin-bottom : 60%;
+        margin-left   : 0;
+    }
+
+    // textを記載する欄
+    .work-description {
+        position: absolute;
+        overflow: auto;
+        top    : 50%;
+        left   : 0;
+        z-index: 1;
+        width  : 100%;
+        height : 50%;
+        
+        .work-description-inner {
+            display: table;
+            width  : 100%;
+            height : 100%;
+            padding: 20px;
+
+            .work-text {
+                display: table-cell;
+                vertical-align: middle;
+                font-size     : 1.2rem;
+                line-height   : 2;
+
+                .button {
+                    margin-top: 20px;
+                    width   : 60%;
+                    padding :3px;
+                }
+
+                .button-ghost {
+                    border: 1px solid #fff;
+                    background-color: $butbackcolor;
+                }
+            }
+        }
+    }
+
+}
+

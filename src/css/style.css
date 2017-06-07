@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+@charset "UTF-8";
+html {
+  font-size: 62.5%; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body {
+  background: #151515 url("../images/bg.png") no-repeat fixed left bottom;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: Raleway, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+
+/*
+ * 各カテゴリのタイトル用スタイル
+ *
+ */
+.heading {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 0;
+  margin-bottom: 2px;
+  margin-left: 0;
+  padding-bottom: 15px;
+  font-size: 4rem; }
+  .heading::before, .heading::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #999; }
+  .heading::before {
+    bottom: 5px; }
+
+.header {
+  padding-top: 170px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 80px; }
+  .header .site-title-sub {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-left: 0; }
+    .header .site-title-sub::before, .header .site-title-sub::after {
+      content: '';
+      display: inline-block;
+      width: 140px;
+      height: 2px;
+      margin-top: 0;
+      margin-left: 30px;
+      margin-bottom: 0;
+      margin-right: 30px;
+      background-color: #fff;
+      vertical-align: middle; }
+  .header .site-title {
+    margin-top: 50px;
+    margin-left: 0;
+    margin-bottom: 40px;
+    margin-right: 0;
+    font-size: 7.6rem; }
+  .header .site-description {
+    margin-bottom: 50px;
+    color: #888;
+    font-size: 1.6rem; }
+
+.buttons .button, .buttons .button-showy {
+  margin: 10px; }
+
+.button, .button-showy {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #afa58d;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem; }
+  .button:hover, .button-showy:hover {
+    opacity: 0.9; }
+
+.button-showy {
+  background-color: #f1b400; }
+
+.about {
+  padding-top: 80px;
+  padding-right: 30px;
+  padding-bottom: 80px;
+  padding-left: 30px;
+  background-color: #fff;
+  color: #333; }
+  .about .about-text {
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-left: 0;
+    line-height: 2.5; }
+
+.works {
+  background-color: ＄backcolor;
+  padding-top: 80px;
+  padding-right: 0;
+  padding-bottom: 80px;
+  padding-left: 0; }
+
+.works-wrapper {
+  display: table;
+  width: 100%;
+  margin-top: 60px;
+  table-layout: fixed; }
+  .works-wrapper .work-box {
+    position: relative;
+    display: table-cell; }
+    .works-wrapper .work-box::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: no-repeat;
+      background-size: 100% 100%;
+      opacity: 0.2;
+      -webkit-transform: scale(-1);
+              transform: scale(-1); }
+    .works-wrapper .work-box:nth-child(odd) .work-image {
+      margin-top: 60%;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-left: 0; }
+    .works-wrapper .work-box:nth-child(odd) .work-description, .works-wrapper .work-box:nth-child(odd)::after {
+      top: 0; }
+  .works-wrapper .tree::after {
+    background-image: url("../images/tree.jpg"); }
+  .works-wrapper .building::after {
+    background-image: url("../images/building.jpg"); }
+  .works-wrapper .lake::after {
+    background-image: url("../images/lake.jpg"); }
+  .works-wrapper .sky::after {
+    background-image: url("../images/sky.jpg"); }
+  .works-wrapper .work-image {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 60%;
+    margin-left: 0; }
+  .works-wrapper .work-description {
+    position: absolute;
+    overflow: auto;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 50%; }
+    .works-wrapper .work-description .work-description-inner {
+      display: table;
+      width: 100%;
+      height: 100%;
+      padding: 20px; }
+      .works-wrapper .work-description .work-description-inner .work-text {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 1.2rem;
+        line-height: 2; }
+        .works-wrapper .work-description .work-description-inner .work-text .button, .works-wrapper .work-description .work-description-inner .work-text .button-showy {
+          margin-top: 20px;
+          width: 60%;
+          padding: 3px; }
+        .works-wrapper .work-description .work-description-inner .work-text .button-ghost {
+          border: 1px solid #fff;
+          background-color: rgba(255, 255, 255, 0.15); }
+
+.skills {
+  padding-top: 80px;
+  padding-right: 0;
+  padding-bottom: 80px;
+  padding-left: 0; }
+
+.skills-wrapper {
+  display: table;
+  width: 80%;
+  margin: 50px auto 0;
+  table-layout: fixed; }
+  .skills-wrapper .skill-box {
+    display: table-cell; }
+
+.skill-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  border: 4px solid;
+  border-radius: 50%;
+  color: #f1b400;
+  font-size: 8rem;
+  line-height: 142px; }
+
+.skill-title {
+  margin-top: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 2rem; }
+
+.skill-text {
+  margin-top: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  line-height: 2; }
+
+.contact {
+  padding-top: 80px;
+  padding-right: 0;
+  padding-bottom: 150px;
+  padding-left: 0; }
+
+.contact-form {
+  width: 50%;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto; }
+  .contact-form input[type=text], .contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff; }
+  .contact-form input[type=text]:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset; }
+  .contact-form textarea {
+    height: 150px; }
+    .contact-form textarea:focus {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset; }
+  .contact-form input[type=submit] {
+    display: block;
+    width: 200px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer; }
+    .contact-form input[type=submit]:hover {
+      background-color: rgba(255, 255, 255, 0.05); }
+
+.footer {
+  padding-top: 12px;
+  padding-right: 0;
+  padding-bottom: 12px;
+  padding-left: 0;
+  font-size: 1.3rem; }
