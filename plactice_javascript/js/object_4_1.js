@@ -1,9 +1,5 @@
-/* JavaScriptにおけるオブジェクト指向*/
-/* ====== クラスではなく、プロトタイプ ====== */
-// プロトタイプ：アウロブジェkつおの元となるオブジェクト
-// JS = プロトタイプベースのオブゼクト指向
-// JavaScriptでは関数（Functionオブジェクト）にクラスとしての役割を与えている
-
+/* 本格的な開発に備える */
+/* ====== プライベートメンバを定義 ====== */
 function Traiangle() {
    var _base;
    var _height;
@@ -51,3 +47,4 @@ t.setHeight(2);
 console.log('三角形の底辺：' + t.getBase());
 console.log('三角形の高さ：' + t.getHeight());
 console.log('三角形の面積：' + t.getArea());
+/* ====== プライベートメンバを定義 ====== */

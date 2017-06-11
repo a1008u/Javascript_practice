@@ -1,3 +1,5 @@
+/* 本格的な開発に備える */
+/* ====== Object.definePropertyメソッドによるアクセサーメソッドの実装 ====== */
 function Traiangle() {
    var _base;
    var _height;
@@ -49,3 +51,4 @@ t.height = 2;
 console.log('三角形の底辺：' + t.base);
 console.log('三角形の高さ：' + t.height);
 console.log('三角形の面積：' + t.getArea());
+/* ====== Object.definePropertyメソッドによるアクセサーメソッドの実装 ====== */
