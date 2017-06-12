@@ -86,13 +86,13 @@ function closure(init) {
     };
 }
 
-// 1.グローバルオブジェクト
+// 1.グローバルオブジェクト(以下は別物)
 var myClousure = closure(1);
 var myClousure2 = closure(100);
 
 for (var i = 1; i < 4; i++) {
-    console.log('myClousure' + i + '回目 ：' + myClousure());
-    console.log('myClousure' + i + '回目 ：' + myClousure2());
+    console.log('myClousure(myClousure())' + i + '回目 ：' + myClousure());
+    console.log('myClousure(myClousure2())' + i + '回目 ：' + myClousure2());
 }
 
 /* ====== クロージャー ====== */
