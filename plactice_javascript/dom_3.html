@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript本格入門</title>
+</head>
+
+<body>
+    
+    
+    <!-- アップロードされたファイルの情報を取得 -->
+    <form>
+        <div>
+            <label for="name">サイト名：</label>
+            <input id ="name" name="name" type="text" size="30"/>  
+        </div>
+            
+        <div>
+            <label for="url">URL：</label>
+            <input id ="url" name="url" type="url" size="50"/>
+        </div>
+        
+        <div>
+            <input id ="btn" type="button" value="追加" />
+        </div>
+    </form>
+    <div id="list"></div>
+   
+    <ul id="list2"></ul>
+    
+    <ul id="list3"></ul>
+    
+    <!-- HTMLCollection／NodeListをくり返し処理する場合の注意点1 -->
+    <ul id="list4">
+        <li>独習PHP 第3版</li>
+        <li>Javaポケットリファレンス</li>
+        <li>Swiftポケットリファレンス</li>
+        <li>独習ASP.NET 第9版</li>
+        <li>アプリを作ろう! Android入門</li>
+    </ul>
+    
+    <!-- HTMLCollection／NodeListをくり返し処理する場合の注意点2 -->
+    <ul id="first">
+        <li>独習PHP 第3版</li>
+        <li>Javaポケットリファレンス</li>
+        <li>Swiftポケットリファレンス</li>
+        <li>独習ASP.NET 第10版</li>
+        <li>アプリを作ろう! Android入門</li>
+    </ul>
+    <ul id="second"></ul>
+    
+    <script type="text/javascript" src="./js_es/dom_3.js"></script>
+</body>
+</html>

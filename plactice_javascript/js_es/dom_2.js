@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // ---------------------- リストボックスの設定 ----------------------
 
 // ---------------------- アップロードされたファイルの情報を取得 ----------------------
-window.addEventListener('DOMContentLoad', function () {
+window.addEventListener('DOMContentLoaded', function () {
     document.getElementById("file").addEventListener('change', function (e) {
         var inputs = document.getElementById("file").files;
         for (var i = 0; i < inputs.length; i++) {
@@ -184,16 +184,31 @@ window.addEventListener('DOMContentLoad', function () {
 // ---------------------- アップロードされたファイルの情報を取得 ----------------------
 
 // ---------------------- テキストファイルの内容を取得 ----------------------
-window.addEventListener('DOMContentLoad', function () {
+window.addEventListener('DOMContentLoaded', function () {
     document.getElementById("file2").addEventListener('change', function (e) {
         var input = document.getElementById("file2").files[0];
         var reader = new FileReader();
-        reader.addEventListner('load', function () {
-            document.getElementById("result11").textContent = reader.result;
+        reader.addEventListener('load', function () {
+            document.getElementById("resultA").textContent = reader.result;
         }, true);
         reader.readAsText(input, 'UTF-8');
     }, true);
 });
 // ---------------------- テキストファイルの内容を取得 ----------------------
+
+// ---------------------- バイナリファイルの読み込み ----------------------
+window.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("fi").addEventListener('change', function (e) {
+        var input = document.getElementById("fi").files[0];
+        var reader = new FileReader();
+        reader.addEventListener('load', function (e) {
+            document.getElementById("rltB").src = reader.result;
+        }, true);
+
+        reader.readAsDataURL(input);
+    }, true);
+});
+// ---------------------- バイナリファイルの読み込み ----------------------
+
 
 /* ======================== フォーム要素にアクセス ======================== */
