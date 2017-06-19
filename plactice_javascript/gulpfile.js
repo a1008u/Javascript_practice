@@ -4,7 +4,33 @@ const browserify = require("browserify");
 const babelify   = require("babelify");
 const transform = require('vinyl-transform');
 const source = require("vinyl-source-stream");
- 
+var packageImporter = require('node-sass-package-importer');
+var sass = require("gulp-sass");
+var del = require("del");
+var packageImporter = require('node-sass-package-importer');
+
+
+gulp.task('default', startWatchify);
+
+/* 【構成要素(SCSS)】-------------------------------------------- */
+// SCSSの設定
+gulp.task("refresh", function(){
+    del('css');
+});
+
+gulp.task("fstc", function(){
+    return gulp.src("sass/style.scss")
+    .pipe(sass({
+        importer: packageImporter({
+            extensions: ['.scss', '.css']
+        })
+     }))
+    .pipe(gulp.dest("css"));
+});
+
+
+/* 【構成要素(Javascript)】-------------------------------------------- */
+// es2015の設定
 gulp.task('makejs', () => {
     return gulp.src('js/*.js')
                 .pipe(babel({presets: ['es2015']}))
@@ -47,4 +73,4 @@ var startWatchify = () => {
     
 };   
 
-gulp.task('default', startWatchify);
+

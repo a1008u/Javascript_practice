@@ -248,6 +248,53 @@ document.addEventListener('DOMContentLoaded',function() {
 // ---------------------- イベントリスナー/ハンドラー配下のthis ----------------------
 
 // ---------------------- イベントリスナーにEventListenerオブジェクトを指定する ----------------------
+// addEventListenerメソッドの第2引数には、
+// これまで関数（Functionオブジェクト）を指定してきましたが、オブジェクトを指定することもできます。
+// イベントリスナーとして指定するオブジェクト（EventListenerオブジェクト）の条件：
+// handleEventメソッドを持っていることだけです。
+// EventListenerオブジェクトでは、配下のthisが（要素の発生元ではなく）EventListenerオブジェクトを示すので、
+// bindメソッドに頼ることなく、先ほどのような問題を回避できます。
+
+document.addEventListener('DOMContentLoaded',function() {
+    var data = {
+        title: 'Java Java Java',
+        price: 2680,
+        handleEvent: function(){
+            console.log(this.title + ' / ' + this.price + '円');
+        }
+    };
+    
+    document.getElementById('btn5').addEventListener(
+        'click', data, false
+        /*'click', data.show, false thisはイベントの発生元を指す*/);
+}, false);
+
+document.addEventListener('DOMContentLoaded',function() {
+    
+    var Counter = function(elem) {
+        this.count = 0;
+        this.elem = elem;
+        
+        elem.addEventListener('click',() => {
+            this.count++;
+            this.show();
+        }, false);
+        
+        /* エラー
+        elem.addEventListener('click',function(){
+            this.count++;
+            this.show();
+        }, false);
+        */
+    };
+    
+    Counter.prototype.show = function(){
+        console.log(this.elem.id + 'は' + this.count + '回クリックされたました。');
+    }
+    
+    var c = new Counter(document.getElementById('btn6'));
+    
+}, false);
 // ---------------------- イベントリスナーにEventListenerオブジェクトを指定する ----------------------
 
 /* ======================== 高度なイベント処理 ======================== */
