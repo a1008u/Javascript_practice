@@ -63,6 +63,25 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false);
 // ---------------------- locationオブジェクト（表示ページのアドレス情報を取得/操作） ----------------------
 
-// ---------------------- locationオブジェクト（表示ページのアドレス情報を取得/操作） ----------------------
+// ---------------------- historyオブジェクト（履歴に沿ってページを前後に移動する） ----------------------
+/*
+ <a href="JavaScript:history.back()">戻る</a>
+ <a href="JavaScript:history.forward()">進む</a>
+*/
+// ---------------------- historyオブジェクト（履歴に沿ってページを前後に移動する） ----------------------
+/*　History APIのpushStateメソッドを利用する　
+var count = 0;
+var result =document.getElementById('result');
+
+document.getElementById('btn').addEventListener('click',function(){
+    result.textContent = ++count;
+    history.pushState(count,null, 'https://javascript-test-a1008u.c9users.io/plactice_javascript/dom_')
+})
+*/
+// ---------------------- pushStateオブジェクト（JavaScriptによる操作をブラウザのい履歴に残す） ----------------------
+
+
+// ---------------------- pushStateオブジェクト（JavaScriptによる操作をブラウザのい履歴に残す） ----------------------
+
 
 /* ======================== ブラウザーオブジェクト ======================== */
