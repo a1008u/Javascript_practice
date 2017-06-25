@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- カテゴリ1；header -->
     <header class="header">
         <p class="site-title-sub">web designer's portfolio</p>
         <h1 class="site-title">HI, MY NAME IS ...</h1>
@@ -19,18 +20,12 @@
         </div>
     </header>
 
+    <!-- カテゴリ2；about -->
     <section class="about" id="about">
         <h2 class="heading"> ABOUT ME</h2>
-        <p class="about-text">
-            はじめまして。日本でWebデザイナーをしています。<br>
-            デザインの専門学校を卒業し、制作会社での業務経験を経て、現在はフリーランスとして働いています。
-        </p>
-        <p class="about-text">
-            このサイトは「HTML/CSS モダンコーディング」という書籍のサンプルとして作られた、架空のWebデザイナーのポートフォリオサイトです。<br>
-            このサンプルのようなサイトをいちから作る過程を通して、HTMLとCSSの実践的なコーディングノウハウを学ぶことができます。
-        </p>
     </section>
 
+    <!-- カテゴリ3；works -->
     <section class="works">
         <h2 class="heading">WORKS</h2>
         
@@ -39,10 +34,7 @@
                 <img class="work-image" src="images/tree.jpg" alt="制作事例1">
                 <div class="work-description">
                     <div class="work-description-inner">
-                        <p class="work-text">
-                        ひとつめの制作事例が入ります。<br>
-                        簡単な説明が入ります。<br>
-                        使用ツール：XXX, XXX, XXX<br>
+                        <p id="work-text1" class="work-text">
                         <a href="#" class="button button-ghost">READ MORE</a>
                         </p>
                     </div>
@@ -52,10 +44,7 @@
                 <img class="work-image" src="images/building.jpg" alt="制作事例2">
                 <div class="work-description">
                     <div class="work-description-inner">
-                        <p class="work-text">
-                        ふたつめの制作事例が入ります。<br>
-                        簡単な説明が入ります。<br>
-                        使用ツール：XXX, XXX, XXX<br>
+                        <p id="work-text2" class="work-text">
                         <a href="#" class="button button-ghost">READ MORE</a>
                         </p>
                     </div>
@@ -65,10 +54,7 @@
                 <img class="work-image" src="images/lake.jpg" alt="制作事例3">
                 <div class="work-description">
                     <div class="work-description-inner">
-                        <p class="work-text">
-                        みっつめの制作事例が入ります。<br>
-                        簡単な説明が入ります。<br>
-                        使用ツール：XXX, XXX, XXX<br>
+                        <p id="work-text3" class="work-text">
                         <a href="#" class="button button-ghost">READ MORE</a>
                         </p>
                     </div>
@@ -78,10 +64,7 @@
                 <img class="work-image" src="images/sky.jpg" alt="制作事例4">
                 <div class="work-description">
                     <div class="work-description-inner">
-                        <p class="work-text">
-                        よっつめの制作事例が入ります。<br>
-                        簡単な説明が入ります。<br>
-                        使用ツール：XXX, XXX, XXX<br>
+                        <p id="work-text4" class="work-text">
                         <a href="#" class="button button-ghost">READ MORE</a>
                         </p>
                     </div>
@@ -90,6 +73,7 @@
         </div>
     </section>
 
+    <!-- カテゴリ4；skills -->
     <section class="skills">
         <h2 class="heading">MY SKILLS</h2>
         <div class="skills-wrapper">
@@ -135,5 +119,7 @@
     <footer class="footer">
       © sample site
     </footer>
+
+<script src="./js/ajax.js"></script>
 </body>
 </html>
