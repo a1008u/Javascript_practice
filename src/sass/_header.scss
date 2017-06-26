@@ -47,20 +47,20 @@
 }
 
 .button {
-        display: inline-block;
-        width: 200px;
-        padding: 20px;
-        border-radius: 4px;
-        background-color: #afa58d;
-        color: #fff;
-        text-decoration: none;
-        letter-spacing: 1px;
-        font-size: 1.2rem;
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #afa58d;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
 
-        &:hover {
-            opacity: 0.9;
-        }
+    &:hover {
+        opacity: 0.9;
     }
+}
 
 .button-showy {
     @extend .button;

@@ -48,6 +48,22 @@ req.onreadystatechange = function() {
           // タグの設定
           disp = document.getElementById("work-text4");
         }        
+      }else if(category === '3'){
+        p.classList.add('work-text');
+        if(part === '1'){
+          // タグの設定
+          disp = document.getElementById("skill-text1");
+        }
+        
+        if(part === '2'){
+          // タグの設定
+          disp = document.getElementById("skill-text2");
+        }
+        
+        if(part === '3'){
+          // タグの設定
+          disp = document.getElementById("skill-text3");
+        }
       }
       
       p.innerHTML = text1;

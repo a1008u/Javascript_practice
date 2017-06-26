@@ -1,27 +1,50 @@
 'use strict';
 
-document.getElementById('btn').addEventListener('click', function () {
-  var url = 'https://b.hatena.ne.jp/entry/jsonlite/?callback=show&url=' + encodeURIComponent(document.getElementById('url').value);
-  var scr = document.createElement('script');
-  scr.src = url;
-  document.getElementsByTagName('body').item(0).appendChild(scr);
+/* ======================== ajaxの操作 ======================== */
+// ---------------------- クロスドキュメントメッセージングによるクロスオリジン通信 ----------------------
+/*
+  クロスドキュメントメッセージングとは、
+  異なるウィンドウ／フレームにあるドキュメントでメッセージを交換するしくみです。
+  異なるオリジンで提供されているガジェットをiframeでページに埋め込み、
+  メインのアプリから操作したり、ガジェットでの処理結果を受け取ったりできる。
+*/
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  var target = 'https://javascript-test-a1008u.c9users.io';
+
+  // メッセージ送信
+  document.getElementById('btn').addEventListener('click', function () {
+
+    /* オリジンに対してメッセージを送信する
+      other.postMessage(message,target)
+      other：送信先ウィンドウ     message：送信するメッセージ
+      target：送信先ウィンドウの生成元オリジン
+    */
+
+    document.getElementById('frame').contentWindow.postMessage(document.getElementById('message').value, target);
+  }, false);
+
+  // メッセージ受信
+  window.addEventListener('message', function (e) {
+    if (e.origin !== target) {
+      return;
+    }
+    console.log(e.data);
+  }, false);
 }, false);
 
-function show(data) {
-  if (data === null) {
-    result.textContent = 'ブックマークは存在しませんでした。';
-  } else {
-    var bms = data.bookmarks;
-    var ul = document.createElement('ul');
-    for (var i = 0; i < bms.length; i++) {
-      var li = document.createElement('li');
-      var anchor = document.createElement('a');
-      anchor.href = 'https://b.hatena.ne.jp/' + bms[i].user;
-      var text = document.createTextNode(bms[i].user + ' ' + bms[i].comment);
-      anchor.appendChild(text);
-      li.appendChild(anchor);
-      ul.appendChild(li);
-    }
-    result.appendChild(ul);
-  }
-}
+/* メッセージを受信
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('message', function(e) {
+    var origin = 'https://localhost';
+    if (e.origin !== origin) { return; }
+    document.getElementById('result').textContent = e.data;
+
+    var current = new Date();
+    e.source.postMessage(current, origin);
+  }, false);
+}, false);
+*/
+
+/* ======================== ajaxの操作 ======================== */

@@ -23,12 +23,12 @@ gulp.task('makecss', function(callback) {
 /* 【構成要素】-------------------------------------------- */
 /* tmpディレクトリを削除 */
 gulp.task("refresh", function(){
-    del('src/css');
+    del('src2/css');
 });
 
 /* 実行：「gulp fstc」 */
 gulp.task("fstc", function(){
-    return gulp.src("src/sass/style.scss")
+    return gulp.src("sass/style.scss")
                 .pipe(sass({
                     importer: packageImporter({
                         extensions: ['.scss', '.css']
@@ -37,14 +37,14 @@ gulp.task("fstc", function(){
                 .pipe(autoprefixer({
                     browsers: ["ios_saf >= 8", "Android >= 4"]
                 }))
-                .pipe(gulp.dest("src/css_tmp"));
+                .pipe(gulp.dest("src2/css_tmp"));
 });
 
 /* cssに@charsetを記載する */
 gulp.task('charset', function () {
-    return gulp.src('src/css_tmp/style.css')
+    return gulp.src('src2/css_tmp/style.css')
                 .pipe(header('@charset "utf-8";\n\n'))
-                .pipe(gulp.dest('src/css'));
+                .pipe(gulp.dest('css'));
 });
 
 /* tmpディレクトリを削除 */
@@ -52,7 +52,7 @@ gulp.task("clean_tmp", function(){
 
     // del("src/test.html");
 
-    gulp.src("src/css_tmp")
+    gulp.src("src2")
     .pipe(vinylPaths(del));
 });
 /* 【構成要素】-------------------------------------------- */

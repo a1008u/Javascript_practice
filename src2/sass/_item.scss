@@ -1,0 +1,59 @@
+$item_backgroudColor: #fff;
+$item_CategoryColor: #aaa;
+$item_itemColor: #777;
+
+// 各アイテムの入れ物を作成
+.item {
+    // 写真の幅は固定長
+    width: 180px;
+    margin-bottom: 4px;
+    padding: 8px;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+    background-color: $item_backgroudColor;
+    
+    .image {
+        display: block;
+        width: 100%;
+    }
+    
+    .category {
+        margin: 15px 9px 10px;
+        color: $item_CategoryColor;
+        letter-spacing: 1px;
+        font-family:"Trebuchet MS","Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    
+        &::before {
+            content:' ';
+            display: inline-block;
+            width: 19px;
+            height: 19px;
+            margin-right: 5px;
+            border: 2px solid;
+            border-radius: 50%;
+            vertical-align: -5px;
+        }
+    }
+    
+    .description {
+        margin: 10px;
+        line-height: 1.5;
+    }
+    
+    // ボックスの枠とあanchorタグの枠を合わせる
+    & > a {
+            display: block;
+            margin: -8px -8px -11px; // 枠をネガティブマージする
+            padding: 8px 8px 11px; // 見た目を元に戻す
+            border-radius: inherit;
+            color: $item_itemColor;
+            transition: all 0.3s;
+        
+        // 押下時に押下対象を薄くする
+        &:hover {
+            box-shadow: 0 0 6px -1px rgba(0,0,0,0.3);
+            opacity: 0.8;
+        }
+    }
+    
+}

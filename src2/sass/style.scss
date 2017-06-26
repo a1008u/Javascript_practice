@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import "~normalize.css";
+
+$backgroundColor : #f6f7fb;
+$bodyColor : #333;
+$aColor : #7C5119;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 30px;
+    background-color: $backgroundColor;
+    color: $bodyColor;
+    font-size: 1.2em;
+    font-family: "Hiragino Kaku Gothic ProN", Meriyo, sans-serif;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+a:link, a:visited, a:hover, a:active{
+    color: $aColor;
+    text-decoration: none;
+}
+
+@import "item";
+
