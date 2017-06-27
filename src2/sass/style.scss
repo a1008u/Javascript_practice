@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "~normalize.css";
+//@import "~normalize.css";
 
 $backgroundColor : #f6f7fb;
 $bodyColor : #333;
@@ -28,3 +28,4 @@ a:link, a:visited, a:hover, a:active{
 
 @import "item";
 
+@import "navi";

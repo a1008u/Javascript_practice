@@ -1,0 +1,58 @@
+$logo: 136px;
+$bottomColor: #7C5119;
+
+.header {
+    padding: 25px 0;
+    border-bottom: none;
+    text-align: center;
+    
+    .logo {
+        width: $logo;
+        height: $logo;
+        // transition効果（時間的変化）をまとめて指定する
+        transition: transform 0.3s;
+        
+        &:hober{
+            // ロゴ画像にホバーした時のスタイル
+            transform: rotate(360deg);
+        }
+    }
+    
+    .nav{
+        margin: 35px auto 10px;
+
+        .nav-item{
+            // 一番上の項目は、マージンの相殺
+            margin-top: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            
+            a{
+                display: inline-block;
+                
+                &::after{
+                    content:'';
+                    display: block;
+                    // 基本は線はなし（横幅がないため）
+                    width: 0;
+                    margin: 6px auto 0;
+                    border-bottom: 1px solid $bottomColor;
+                    // width(aタグ)と同じ大きさに
+                    transition: width 0.3s ease-in-out;
+                }
+                
+                &:hover{
+                    &::after{
+                        width: 100%;
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+}

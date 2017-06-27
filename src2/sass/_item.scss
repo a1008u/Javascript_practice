@@ -2,6 +2,14 @@ $item_backgroudColor: #fff;
 $item_CategoryColor: #aaa;
 $item_itemColor: #777;
 
+$item_Maindish: #FFC0CB;
+$item_Appetizer: #76C047;
+$item_Column: #FFF100;
+$item_Breaktime: #C1EFFF;
+
+$item_m: 364px;
+$item_l: 732px;
+
 // 各アイテムの入れ物を作成
 .item {
     // 写真の幅は固定長
@@ -15,6 +23,7 @@ $item_itemColor: #777;
     .image {
         display: block;
         width: 100%;
+        height: 109px;
     }
     
     .category {
@@ -56,4 +65,63 @@ $item_itemColor: #777;
         }
     }
     
+}
+
+// itemの装飾
+.item-maindish {
+    border-color: $item_Maindish;
+    .category {
+        &::before {
+            border-color: $item_Maindish;
+        }
+    }
+}
+
+.item-apptizer {
+    border-color: $item_Appetizer;
+    .category {
+        &::before {
+            border-color: $item_Appetizer;
+        }
+    }
+}
+
+.item-column {
+    border-color: $item_Column;
+    .category {
+        &::before {
+            border-color: $item_Column;
+        }
+    }
+}
+
+.item-breaktime {
+    border-color: $item_Breaktime;
+    .category {
+        &::before {
+            border-color: $item_Breaktime;
+        }
+    }
+}
+
+
+/*
+itemの大きさについて、
+小ベース(幅)：180px
+中ベース：(180px*2) + 4px(gutterの幅) = 364px
+大ベーズ：(364px*2) + 4px(gutterの幅) = 732px
+*/
+
+.item-m{
+    width: $item_m;
+    & .image {
+        height: 146px;
+    }
+}
+
+.item-l{
+    width: $item_l;
+    & .image {
+        height: 403px;
+    }
 }
