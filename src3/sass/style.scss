@@ -1,0 +1,38 @@
+@charset "UTF-8";
+//@import "~normalize.css";
+
+$bodyColor: #333;
+$bodyFontSize: 1.2rem;
+$bodyFontFamily: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$aColor:#d03c56;
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    color: $bodyColor;
+    font-size: $bodyFontSize;
+    font-family: $bodyFontFamily;
+}
+
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+a{
+    &:link, &:visited, &:hover, &:active{
+        color: $aColor;
+        text-decoration: none;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+@import "header";
+
+@import "wrapper";
+
+@import "footer";
