@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "~normalize.css";
+$aColor : #fff;
 
 html {
     font-size: 62.5%;
@@ -44,6 +45,11 @@ body {
     &::before {
         bottom: 5px;
     }
+}
+
+a:link, a:visited, a:hover, a:active{
+    color: $aColor;
+    text-decoration: none;
 }
 
 @import "header";

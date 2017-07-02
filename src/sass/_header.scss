@@ -37,35 +37,37 @@
         color: #888;
         font-size:1.6rem;
     }
+    
+    /* buttons----------------------- */
+    %commonbutton {
+        display: inline-block;
+        width: 200px;
+        padding: 20px;
+        border-radius: 4px;
+        background-color: #afa58d;
+        color: #fff;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 
-}
-
-.buttons {
-    .button {
-        margin: 10px;
+    .buttons {
+        .button {
+            @extend %commonbutton;
+            margin: 10px;
+        }
+        
+        .button-showy {
+            @extend %commonbutton;
+            background-color: #f1b400;
+        }
     }
 }
 
-.button {
-    display: inline-block;
-    width: 200px;
-    padding: 20px;
-    border-radius: 4px;
-    background-color: #afa58d;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 1.2rem;
-
-    &:hover {
-        opacity: 0.9;
-    }
-}
-
-.button-showy {
-    @extend .button;
-    background-color: #f1b400;
-}
 
 
 

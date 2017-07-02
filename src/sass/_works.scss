@@ -1,12 +1,12 @@
 $backcolor: #383634;
-$butbackcolor:rgba(255, 255, 255, 0.15);
+$butbackcolor: rgba(255, 255, 255, 0.15);
 $tree     : url('../images/tree.jpg');
 $building : url('../images/building.jpg');
 $lake     : url('../images/lake.jpg');
 $sky      : url('../images/sky.jpg');
 
 .works {
-    background-color: ＄backcolor;
+    background-color: $backcolor;
     padding-top   : 80px;
     padding-right : 0;
     padding-bottom: 80px;
@@ -19,6 +19,7 @@ $sky      : url('../images/sky.jpg');
     margin-top  : 60px;
     table-layout: fixed;
 
+    /* work-box--------------------- */
     .work-box {
         position: relative;
         display: table-cell;
@@ -48,34 +49,22 @@ $sky      : url('../images/sky.jpg');
                 top: 0;
             }
         }
+        
+        /* work-image--------------------- */
+        .work-image {
+            // 画像をcellからはみ出さないようにする
+            display:block;
+            width  :100%;
+    
+            // 画像比(5:3)を用いて、marginで領域を作る
+            margin-top    : 0;
+            margin-right  : 0;
+            margin-bottom : 60%;
+            margin-left   : 0;
+        }
     }
-
-    // after要素に画像を貼り付ける
-    .tree::after{
-        background-image: $tree;
-    }
-    .building::after{
-        background-image: $building;
-    }
-    .lake::after{
-        background-image: $lake;
-    }
-    .sky::after{
-        background-image: $sky;
-    }
-
-    .work-image {
-        // 画像をcellからはみ出さないようにする
-        display:block;
-        width  :100%;
-
-        // 画像比(5:3)を用いて、marginで領域を作る
-        margin-top    : 0;
-        margin-right  : 0;
-        margin-bottom : 60%;
-        margin-left   : 0;
-    }
-
+    
+    /* work-description--------------------- */
     // textを記載する欄
     .work-description {
         position: absolute;
@@ -93,7 +82,7 @@ $sky      : url('../images/sky.jpg');
             padding: 20px;
 
             .work-text {
-                // display: table-cell;
+                //display: table-cell;
                 vertical-align: middle;
                 font-size     : 1.2rem;
                 line-height   : 2;
@@ -112,5 +101,18 @@ $sky      : url('../images/sky.jpg');
         }
     }
 
+    // after要素に画像を貼り付ける
+    .tree::after{
+        background-image: $tree;
+    }
+    .building::after{
+        background-image: $building;
+    }
+    .lake::after{
+        background-image: $lake;
+    }
+    .sky::after{
+        background-image: $sky;
+    }
 }
 

@@ -1,7 +1,45 @@
 .footer{
     width: 100%;
+    padding: 20px 0 30px;
+    background: #2d3d54 url('../standard-layout/images/bg-footer.gif');
+    color: #fff;
     
-    border: 1px solid #aaa;
-    background-color: #ccc;
-    height: 100px;
+    /* list--------------------------------- */
+    .horizontal-list{
+        width: 970px;
+        margin: 0 auto;
+        text-align: right;
+        // 表示箇所で文字サイズを指定させる
+        font-size: 0;
+    
+        .horizontal-item{
+            display: inline-block;
+            padding: 0 15px;
+            letter-spacing: 1px;
+            
+            + .horizontal-item{
+                // 区切り線を挿入
+                border-left: 1px solid #bbb;
+            }
+            
+            a{
+                border-bottom: 1px dashed #777;
+                color: #bbb;
+                font-size: 1.1rem;
+                transition: color 0.15s;
+                
+                &:hover{
+                    color: #ddd;
+                }
+            }
+        }
+        
+    }
+    
+    /* list--------------------------------- */
+    .copyright{
+        margin-top: 30px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
 }

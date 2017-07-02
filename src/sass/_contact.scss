@@ -15,7 +15,7 @@ $boxshadow:0 0 8px  rgba(255, 255, 255, 0.5) inset;
     margin-bottom: 0;
     margin-left  : auto;
 
-    input[type=text], textarea {
+    %base {
         display: block;
         width  :100%;
         margin-bottom: 10px;
@@ -28,12 +28,14 @@ $boxshadow:0 0 8px  rgba(255, 255, 255, 0.5) inset;
     }
 
     input[type=text] {
+        @extend %base;
         &:focus, {
             box-shadow:$boxshadow;
         }
     }
 
     textarea {
+        @extend %base;
         height: 150px;
 
         &:focus, {

@@ -1,0 +1,165 @@
+.sidemenu{
+    float: right;
+    width: 275px;
+
+    /* ランキング-----------------------*/
+    .ranking{
+        margin-bottom: 30px;
+        list-style-type: none;
+        counter-reset: ranking;
+        
+        .ranking-item{
+            margin-top: 15px;
+            
+            a{
+                display: block;
+                font-size: 0;
+                transition: opacity 0.15s;
+                
+                &:hover{
+                    opacity: 0.8;
+                }
+                
+                /* image-----------------------*/
+                .image{
+                    width: 55px;
+                    height: 55px;
+                }
+                
+                /* order-----------------------*/
+                .order{
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    margin: 0 10px;
+                    border: 1px solid #ccc;
+                    color: #aaa;
+                    vertical-align: 20px;
+                    text-align: center;
+                    font-weight: bold;
+                    line-height: 16px;
+                    transform: rotate(45deg);
+                    
+                    &::before{
+                        content: counter(ranking);
+                        counter-increment: ranking;
+                        display: inline-block;
+                        font-size: 1.0rem;
+                        transform: rotate(-45deg);
+                    }
+                }
+                
+                /* text-----------------------*/
+                .text{
+                    display: inline-block;
+                    width: 182px;
+                    color: #000;
+                    vertical-align: top;
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                }
+                
+            }
+            
+            // 継承用に利用する
+            .baseOrder{
+                border: none;
+                color: #fff;
+                font-weight: normal;
+                line-height: 18px;
+            }
+            
+            &:nth-of-type(1){
+                .order{
+                    @extend .baseOrder;
+                    background-color: #dab413;
+                }
+            }
+            
+            &:nth-of-type(2){
+                .order{
+                    @extend .baseOrder;
+                    background-color: #6e7b84;
+                }
+            }
+            
+            &:nth-of-type(3){
+                .order{
+                    @extend .baseOrder;
+                    background-color: #a0541a;
+                }
+            }
+            
+        }
+        
+    }
+    
+    /* ドキュメント-----------------------*/
+    .documents{
+        margin: 10px 10px 30px;
+        list-style-type: none;
+        
+        >li {
+            .title{
+                margin: 15px 0;
+                padding-left: 8px;
+                border-left: 5px solid #d03c56;
+                font-size: 1.4rem;
+                line-height: 1.2;
+            }
+            
+            ul{
+                list-style-type: none;
+                margin: 15px;
+                
+                >li {
+                    margin-bottom: 15px;
+                    padding-left: 10px;
+                    // リスト用の点を追加
+                    background:  url('../standard-layout/images/arrow.gif') no-repeat left center;
+                    
+                    a{
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            
+            + li{
+                margin-top: 25px;
+            }
+        }
+    }
+    
+    /* 検索-----------------------*/
+    .search-box{
+        padding: 15px;
+        background-color: #ccc;
+        font-size: 0;
+        
+        > *{
+            font-size: 1.2rem;
+        }
+        
+        .search-input{
+            width: 205px;
+            height: 26px;
+            padding: 0 10px;
+            border: none;
+        }
+        
+        .search-button{
+            width: 40px;
+            height: 26px;
+            border: none;
+            background-color: #d03c56;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .text{
+            margin-top: 12px;
+        }
+    }
+}

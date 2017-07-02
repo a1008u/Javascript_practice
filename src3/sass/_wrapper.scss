@@ -1,155 +1,20 @@
-$hotColor: rgba(0,0,0,0.15);
-$hotBackGroundColor: #2d3d54;
+
 
 .wrapper {
     width: 970px;
     margin: 30px auto 40px;
-    
-    .main {
-        display: block;
-        float: left;
-        width: 660px;
-        
-        /* hot-topic___________________________________________ */
-       .hot-topic{
-           display: block;
-           height: 300px;
-           margin-bottom: 30px;
-           box-shadow: 0 6px 4px -4px $hotColor;
-           transition: opacity 0.15s;
-           overflow: hidden;
-           
-           &:hover{
-               oacity: 0.85;
-           }
-           
-           .image{
-               float: left;
-               width: 50%;
-               height: 100%;
-           }
-           
-           .content{
-               position: relative;
-               float: left;
-               width: 50%;
-               height: 100%;
-               padding: 105px 25px 0;
-               background-color: $hotBackGroundColor;
-               line-height: 1.6;
-               
-               .title{
-                   margin-bottom: 15px;
-                   color: #fff;
-                   font-weight: normal;
-                   font-size: 2.0rem;
-               }
-               
-               .desc{
-                   color: #ddc;
-               }
-               
-               .date{
-                   position: absolute;
-                   top: 60px;
-                   left: 0;
-                   width: 140px;
-                   padding: 4px;
-                   background-color: #fff;
-                   color: #2d3d54;
-                   text-align: center;
-                   letter-spacing: 1px;
-                   font-weight: bold;
-                   font-size: 1.1rem;
-                   line-height: 1;
-               }
-           }
-       }
-       
-       /* NEWS___________________________________________ */
-       .heading{
-           padding: 10px 12px;
-           background: url('../standard-layout/images/bg-slash.gif');
-           letter-spacing: 1px;
-           font-size: 1.6rem;
-       }
-       .scroll-list{
-           max-height: 220px;
-           /* 子要素であるリスト項目の高さが親要素の高さを上回った場合に、はみ出た領域を縦方向にスクロールする */
-           overflow-y: auto;
-           margin-bottom: 30px;
-           list-style-type: none;
-           
-           .date{
-               display: inline-block;
-               width: 19%;
-               letter-spacing: 1px;
-               font-weight: bold;
-               font-size: 1.0rem;
-           }
-           
-           .category{
-               @extend .date;
-               width: 8%;
-               border-radius: 5px;
-               background-color: #d03c56;
-               color: #fff;
-               text-align: center;
-               line-height: 16px;
-               font-weight: normal;
-               letter-spacing: 0px;
-           }
-           
-           .news{
-                background-color: #2c3c53;
-            }
-           
-           .title{
-               @extend .date;
-               width: 73%;
-               padding-left: 15px;
-               overflow: hidden;
-               text-overflow: elllipsis;
-               white-space: nowrap;
-               font-size: 1.2rem;
-               font-weight: normal;
-           }           
-           
-           
-           .scroll-item {
-               &:nth-of-type(even){
-                   a{
-                       background: url('../standard-layout/images/bg-slash.gif');
-                   }
-               }
-               
-               a{
-                   display: block;
-                   padding: 10px 15px;
-                   color: #333;
-                   font-size: 0;
-                   transition: background-color 0.1s;
-                   
-                   &:hover{
-                       background-color: #fafaf8;
-                   }
-               }
-               
-           }
-       }
-       
-       
-       /* Articles___________________________________________ */
-    }
-    
-    .sidemenu{
-        float: right;
-        width: 275px;
-        
-        border: 1px solid #aaa;
-        background-color: #ccc;
-        height: 500px;
-    }
-    
     overflow: hidden;
+    
+    /* common */
+    .heading{
+       padding: 10px 12px;
+       background: url('../standard-layout/images/bg-slash.gif');
+       letter-spacing: 1px;
+       font-size: 1.6rem;
+   }
+    
+    @import "wrapperMain";
+    
+    @import "wrapperSide";
+    
 }
