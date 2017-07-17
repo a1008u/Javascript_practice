@@ -1,0 +1,227 @@
+$silverTree:#58BE89;
+$blackRock:#363947;
+$veryLightgrey:#CCCCCC;
+$Denim:#0E7AC4;
+$lightCoral:#F27398;
+
+
+
+/* 【共通処理】---------------------- */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 200px 50px;
+}
+
+input[type="radio"] {
+    display: none;
+    
+    &:checked + .jpa1{
+        background-color: $lightCoral;
+    }
+    &:checked + .jpa2{
+        background-color: $lightCoral;
+    }
+    &:checked + .jpa3{
+        background-color: $lightCoral;
+    }
+}
+
+.text{
+    color: $blackRock;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* 【個別処理】---------------------- */
+
+// API-------------------------
+.jpa {
+    @extend .text;
+    display: inline-block;
+    cursor: pointer;
+    width: 300px;
+    margin: 0;
+    padding: 20px;
+    background: $silverTree;
+    font-size: 10px;
+    transition: .2s;
+    border-radius: 3px;
+
+    &:hover{
+        background-color: $lightCoral;
+    }
+}
+
+.jpaTitle{
+    @extend .text;
+    text-align: left;
+    letter-spacing: 2px;
+}
+
+.base{
+    content:" ";
+	position:absolute;
+	width:0;
+	height:0;
+	border-style:solid;
+	border-color:transparent;
+}
+
+.Balloon{
+	position:relative;
+	margin: 0 0 30px;
+	padding:10px 20px;
+	border:#333 solid 3px;
+	border-radius:18px;
+	background:#fff;
+	box-shadow:
+		-7px -5px 0 0 #e8e8e8 inset,
+		2px 3px 0 0 #000;
+
+	&:before{
+    	@extend .base;
+    	top:100%;
+    	left:14px;
+    	border-width:20px;
+    	border-top-color:#333;
+    }
+    
+    &:after{
+    	@extend .base;
+    	bottom:-27px;
+    	left:18px;
+    	border-width:14px;
+    	border-top-color:#e8e8e8;
+    }	
+}
+
+
+.row{
+    padding: 0 30px;
+    
+    .jpa1 {
+        @extend .jpa;
+    }
+    
+    .jpa2 {
+        @extend .jpa;
+    }
+    
+    .jpa3 {
+        @extend .jpa;
+    }
+}
+
+
+
+// CRUD-------------------------
+.sqlTitle{
+    @extend .text;
+    text-align: left;
+    letter-spacing: 2px;
+}
+
+.crud {
+    margin: 0 30px;
+    border-radius: 4px;
+    background: $silverTree;
+    position: relative;
+    z-index: 10;
+    width: 300px;
+    overflow: hidden;
+    
+    &:before{
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        width: 12px;
+        height: 2px;
+        content: "";
+        margin: auto;
+        vertical-align: middle;
+        background: $blackRock;
+        transform: rotate(45deg);
+    }
+    &:after{
+        position: absolute;
+        top: 23px;
+        right: 20px;
+        width: 8px;
+        height: 8px;
+        content: "";
+        margin: auto;
+        vertical-align: middle;
+        border-right: 2px solid $blackRock;
+        border-bottom: 2px solid $blackRock;
+    }
+    
+    .sql {
+        position: relative;
+        padding: 11px 0 10px 15px;
+        appearance: button;
+        width: 300px;
+        display: inline-block;
+        height: 50px;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        background: none;
+        z-index: 1;
+        
+    }
+}
+
+// Name-------------------------
+.textContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+    .controlLabel{
+        @extend .text;
+        font-size: 10px;
+        width: 20%; 
+        height: 15px;
+        padding: 10px;
+        
+        
+        &:after{
+            content: " ";
+            display: inline-block;
+            height: 15px;
+            width: 40px;
+            margin-left: 5px;
+            background: url(../jpg/comment.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    
+
+    
+    .formText {
+        width: 80%; 
+        height: 15px;
+        padding: 10px;
+    }
+}
+
+// submit-------------------------
+
+.btn{
+    @extend .text;
+    font-size: 10px;
+    background: $silverTree;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    
+    &:hover{
+        background-color: $lightCoral;
+    }
+}
+

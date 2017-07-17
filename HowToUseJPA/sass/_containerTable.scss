@@ -1,0 +1,51 @@
+$mySin:#FBA848;
+$blackRock:#363947;
+
+
+// table-------------------------
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+	padding: 0 200px;
+}
+
+.tableParts	{
+	padding: 10px;
+	color: $blackRock;
+}
+
+.Table{
+    border-collapse: separate;	
+	border-spacing: 0;
+	width: 100%;
+	margin-bottom: 30px;
+	
+	.Thead{
+        th{
+            @extend .tableParts;
+            border-bottom-style:double;
+            border-width:6px;
+            border-color:$mySin;
+            font-weight: bold;
+        }
+    }
+
+	.Tbody{
+        text-align: right;
+        
+        .tbodyTr{
+             &:hover{
+                 background: $silverTree;
+             }   
+        }
+        
+        td{
+            @extend .tableParts;
+            padding:25px;
+            border-bottom-style:solid;
+            border-width:2px;
+            border-color:$blackRock;
+        }
+    }
+}
+
