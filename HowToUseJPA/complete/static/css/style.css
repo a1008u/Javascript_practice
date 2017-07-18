@@ -444,14 +444,14 @@ input[type="radio"] {
   input[type="radio"]:checked + .jpa3 {
     background-color: #F27398; }
 
-.text, .jpa, .row .jpa1, .row .jpa2, .row .jpa3, .jpaTitle, .sqlTitle, .textContainer .controlLabel, .btn {
+.text, .jpa, .radio .jpa1, .jpa2, .jpa3, .jpaTitle, .sqlTitle, .textContainer .controlLabel, .btn {
   color: #363947;
   font-size: 30px;
   text-align: center;
   line-height: 1; }
 
 /* 【個別処理】---------------------- */
-.jpa, .row .jpa1, .row .jpa2, .row .jpa3 {
+.jpa, .radio .jpa1, .jpa2, .jpa3 {
   display: inline-block;
   cursor: pointer;
   width: 300px;
@@ -462,7 +462,7 @@ input[type="radio"] {
   -webkit-transition: .2s;
   transition: .2s;
   border-radius: 3px; }
-  .jpa:hover, .row .jpa1:hover, .row .jpa2:hover, .row .jpa3:hover {
+  .jpa:hover, .radio .jpa1:hover, .jpa2:hover, .jpa3:hover {
     background-color: #F27398; }
 
 .jpaTitle {
@@ -496,8 +496,14 @@ input[type="radio"] {
     border-width: 14px;
     border-top-color: #e8e8e8; }
 
-.row {
-  padding: 0 30px; }
+.radio {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 40px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
 
 .sqlTitle {
   text-align: left;

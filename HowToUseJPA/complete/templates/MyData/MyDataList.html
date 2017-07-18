@@ -22,15 +22,21 @@
         
         <section class="flex-container" th:classappend="${#fields.hasErrors('jpa')}? 'has-error has-feedback'">
             <label for="jpa" class="jpaTitle Balloon"><abbr title="required">*</abbr>JPA</label>
-        	<div class="row" th:each="item : ${radioItems_jpa}">
-        	    <input type="radio" id="JPA1" class="radio" name="jpa" autocomplete="off" th:value="${item.value}" th:field="*{jpa}">
-                <label  for="JPA1" class="jpa1" th:for="${#ids.prev('jpa')}" th:text="${item.key}">Repository1</label>
-                
-                <input type="radio" id="JPA2" class="radio" name="jpa" autocomplete="off" th:value="${item.value}" th:field="*{jpa}">
-                <label  for="JPA2" class="jpa2" th:for="${#ids.prev('jpa')}" th:text="${item.key}">Repository1</label>
-                <input type="radio" id="JPA3" class="radio" name="jpa" autocomplete="off" th:value="${item.value}" th:field="*{jpa}">
-                <label  for="JPA3" class="jpa3" th:for="${#ids.prev('jpa')}" th:text="${item.key}">Repository1</label>
-                
+        	<div class="radio" >
+        	   <p th:each="item : ${radioItems_jpa}">
+        	        <input type="radio"  name="jpa" autocomplete="off" th:value="${item.value}" th:field="*{jpa}" >
+                    <label   class="jpa1" th:for="${#ids.prev('jpa')}" th:text="${item.key}">Repository1</label>
+               </p>
+               
+               <p th:each="item : ${radioItems_jpa}">
+        	        <input type="radio"  name="jpa" autocomplete="off" th:value="${item.value}" th:field="*{jpa}" >
+                    <label   class="jpa1" th:for="${#ids.prev('jpa')}" th:text="${item.key}">Repository1</label>
+               </p>
+               
+               <p th:each="item : ${radioItems_jpa}">
+        	        <input type="radio"  name="jpa" autocomplete="off" th:value="${item.value}" th:field="*{jpa}" >
+                    <label   class="jpa1" th:for="${#ids.prev('jpa')}" th:text="${item.key}">Repository1</label>
+               </p>
             </div>
             <span th:if="${#fields.hasErrors('jpa')}" th:errors="*{jpa}" th:errorclass="err">error!</span>
         </section>

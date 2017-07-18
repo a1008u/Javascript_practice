@@ -97,21 +97,24 @@ input[type="radio"] {
     }	
 }
 
-
-.row{
-    padding: 0 30px;
+.radio{
+    display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
     
     .jpa1 {
         @extend .jpa;
     }
     
-    .jpa2 {
-        @extend .jpa;
-    }
+}
+
     
-    .jpa3 {
-        @extend .jpa;
-    }
+.jpa2 {
+    @extend .jpa;
+}
+
+.jpa3 {
+    @extend .jpa;
 }
 
 
